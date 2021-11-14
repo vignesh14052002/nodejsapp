@@ -2,7 +2,9 @@ let socket;
 function setup() {
 	createCanvas(400,400);
 	background(0)
-	socket=io.connect("http://localhost:8000")
+	let website="https://tranquil-shore-92566.herokuapp.com/"
+	let localsite="http://localhost:8000"
+	socket=io.connect(website)
 	socket.on('mouse',server)
 }
 function server(d){
