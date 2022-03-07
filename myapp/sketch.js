@@ -1,22 +1,22 @@
-let socket;
+let socket,capture;
 function setup() {
 	createCanvas(400,400);
-	background(0)
+	background(0);
+	capture = createCapture(VIDEO);
+  capture.size(400, 400);
 	let website="https://tranquil-shore-92566.herokuapp.com/"
 	let localsite="http://localhost:8000"
-	socket=io.connect(website)
-	socket.on('mouse',server)
+	socket=io.connect(localsite)
+	socket.on('screen',server)
 }
 function server(d){
-	fill(100)
-	ellipse(d.x,d.y,10,10)
+//capture=d;
+console.log(d);
 }
-function mouseDragged(){
-	
-	fill(200)
-	ellipse(mouseX,mouseY,10,10)
-	socket.emit('mouse',{x:mouseX,y:mouseY})
+function h(){
+	socket.emit('screen',{capture});
 }
 function draw(){
-
+h();	
+	image(capture, 0, 0, 400, 400);
 }

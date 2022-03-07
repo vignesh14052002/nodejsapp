@@ -10,8 +10,8 @@ const io=socket(server)
 
 io.sockets.on('connection',(socket)=>{
 	console.log(socket.id)
-	socket.on('mouse',(msg)=>{
-		socket.broadcast.emit('mouse',msg)
+	socket.on('screen',(msg)=>{
+		socket.broadcast.emit('screen',msg)
 		//console.log(msg)
 	})
 })

@@ -4,13 +4,13 @@
   "description": "learning server side with node",
   "main": "index.js",
   "scripts": {
-    "start":"node index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
+    "start": "node index.js",
+    "test":"nodemon index.js" },
   "author": "vignesh A",
   "license": "MIT",
   "dependencies": {
     "express": "^4.17.1",
+    "nodemon": "^2.0.15",
     "socket.io": "^4.2.0"
   }
 }
